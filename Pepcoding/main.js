@@ -17,7 +17,7 @@ browserOpenPromise.then(function(browser) {
     return openPromise;
 }).then(function(newTab) {
     page  = newTab;
-    let wikiOpenPromise =page.goto(url);
+    let wikiOpenPromise = page.goto(url);
     return wikiOpenPromise;
 }).then(function() {
     let linkWaitPromise = page.waitForSelector("a[id='js-link-box-en']");
@@ -74,17 +74,17 @@ browserOpenPromise.then(function(browser) {
         let div = $(".mw-parser-output p");
         
         console.log("\n\n\n-----------------Name-------------------\n\n\n")
-        for(let i =2;i<=4;i++){
+        for(let i = 2; i <= 4; i++){
             console.log($(div[i]).text());
             
         }
         console.log("\n\n\n----------------History-----------------\n\n\n")
-        for(let i =5;i<=13;i++){
+        for(let i = 5; i <= 13; i++){
             console.log($(div[i]).text());
             
         }
         console.log("\n\n\n-------------Pronounciation-------------\n\n\n")
-        for(let i =15;i<=47;i++){
+        for(let i = 15; i <= 47; i++){
             console.log($(div[i]).text());
     
         }
