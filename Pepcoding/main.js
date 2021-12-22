@@ -72,25 +72,32 @@ browserOpenPromise.then(function(browser) {
 
         let $ = cheerio.load(html);
         let div = $(".mw-parser-output p");
+        let ul = $(".mw-parser-output ul");
         
-        console.log("\n\n\n-----------------Name-------------------\n\n\n")
+        console.log("\n\n-----------------Name-------------------\n\n")
         for(let i = 2; i <= 4; i++){
             console.log($(div[i]).text());
             
         }
-        console.log("\n\n\n----------------History-----------------\n\n\n")
+
+        console.log("\n\n----------------History-----------------\n\n")
         for(let i = 5; i <= 13; i++){
             console.log($(div[i]).text());
             
         }
-        console.log("\n\n\n-------------Pronounciation-------------\n\n\n")
-        for(let i = 15; i <= 47; i++){
+        
+        console.log("\n\n-------------Pronounciation-------------\n\n")
+        for(let j = 12; j < 18; j++)
+        {
+            console.log("\n");
+            console.log($(div[j+3]).text());
+            console.log($(ul[j]).text());
+        }
+        for(let i = 18; i <= 47; i++){
             console.log($(div[i]).text());
-    
         }
     }
 }).catch(function(err) {
     console.log(err.message);
 })
-
 
